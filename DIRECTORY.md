@@ -490,7 +490,7 @@
     * [Transformations 2D](linear_algebra/src/transformations_2d.py)
 
 ## Linear Programming
-  * [Simplex](linear_programming/simplex.py)
+  * [Simplex](linear_algebra/linear_programming/simplex.py)
 
 ## Machine Learning
   * [Astar](machine_learning/astar.py)
