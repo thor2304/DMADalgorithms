@@ -6,6 +6,8 @@
 # logical NAND: 'nand'
 # material implication: '=>', 'implies'
 # logical biconditional: '='
+# bidirectional implication (<=>): '-(p!=q)'
+
 from ttg import ttg
 
 if __name__ == '__main__':

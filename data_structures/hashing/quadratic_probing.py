@@ -2,7 +2,6 @@
 
 from hash_table import HashTable
 
-
 class QuadraticProbing(HashTable):
     """
     Basic Hash Table example with open addressing using Quadratic Probing
@@ -14,7 +13,8 @@ class QuadraticProbing(HashTable):
         self.c_2 = c_2
 
     def hash_function(self, key):
-        return ((3 * key) + 5) % 11
+        #edit this function to change the hash function
+        return (key + 3) % 11
 
     def _collision_resolution(self, key, data=None):
         i = 1
@@ -38,6 +38,7 @@ class QuadraticProbing(HashTable):
 
 
 if __name__ == '__main__':
+    #REMEMBER TO CHANGE THE HASH FUNCTION IN THE CLASS
     q_hash = QuadraticProbing(11, values=[13, 39, None, 36, None, None, None, None, 23, 5, None], c_1=3, c_2=1)
     # for n in [13, 39, 36, 23, 5]:
     #     q_hash.insert_data(n)

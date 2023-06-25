@@ -51,6 +51,7 @@ class BinaryHeap:
                 self.__heap[bigger_child] = temporary
             i = bigger_child
 
+    #the same as extract max
     def pop(self) -> int:
         """Pop the root element"""
         max_value = self.__heap[1]
