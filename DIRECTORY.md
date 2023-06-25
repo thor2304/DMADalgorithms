@@ -470,12 +470,12 @@
   * [Sha256](hashes/sha256.py)
 
 ## Knapsack
-  * [Greedy Knapsack](knapsack/greedy_knapsack.py)
-  * [Knapsack](knapsack/knapsack.py)
-  * [Recursive Approach Knapsack](knapsack/recursive_approach_knapsack.py)
+  * [Greedy Knapsack](greedy_methods/knapsack/greedy_knapsack.py)
+  * [Knapsack](greedy_methods/knapsack/knapsack.py)
+  * [Recursive Approach Knapsack](greedy_methods/knapsack/recursive_approach_knapsack.py)
   * Tests
-    * [Test Greedy Knapsack](knapsack/tests/test_greedy_knapsack.py)
-    * [Test Knapsack](knapsack/tests/test_knapsack.py)
+    * [Test Greedy Knapsack](greedy_methods/knapsack/tests/test_greedy_knapsack.py)
+    * [Test Knapsack](greedy_methods/knapsack/tests/test_knapsack.py)
 
 ## Linear Algebra
   * Src

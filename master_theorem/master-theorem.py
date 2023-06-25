@@ -52,7 +52,7 @@ def format_poly_log(k, i):
 
 if __name__ == "__main__":
     print("Format:"
-          "\nT(n) = aT(n/b) + Θ(n^k (log n)^i"
+          "\nT(n) = aT(n/b) + Θ(n^k (log n)^i)"
           "\nOBS If the answer gives something like log^2(n) which does not match one of the cases, then it cannot be solved")
     
     a = float(input("Enter a:\n"))

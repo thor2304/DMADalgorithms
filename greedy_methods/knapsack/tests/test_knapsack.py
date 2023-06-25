@@ -8,7 +8,7 @@ This file contains the test-suite for the knapsack problem.
 """
 import unittest
 
-from knapsack import knapsack as k
+from greedy_methods.knapsack import knapsack as k
 
 
 class Test(unittest.TestCase):
