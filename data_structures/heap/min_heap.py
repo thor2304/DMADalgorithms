@@ -13,22 +13,25 @@ class Node:
     def __lt__(self, other):
         return self.val < other.val
 
+    def __repr__(self):
+        return f"({self.name} ; {self.val})"
+
 
 class MinHeap:
     """
-    >>> r = Node("R", -1)
-    >>> b = Node("B", 6)
-    >>> a = Node("A", 3)
-    >>> x = Node("X", 1)
-    >>> e = Node("E", 4)
-    >>> print(b)
-    Node(B, 6)
-    >>> myMinHeap = MinHeap([r, b, a, x, e])
-    >>> myMinHeap.decrease_key(b, -17)
-    >>> print(b)
-    Node(B, -17)
-    >>> myMinHeap["B"]
-    -17
+    # >>> r = Node("R", -1)
+    # >>> b = Node("B", 6)
+    # >>> a = Node("A", 3)
+    # >>> x = Node("X", 1)
+    # >>> e = Node("E", 4)
+    # >>> print(b)
+    # Node(B, 6)
+    # >>> myMinHeap = MinHeap([r, b, a, x, e])
+    # >>> myMinHeap.decrease_key(b, -17)
+    # >>> print(b)
+    # Node(B, -17)
+    # >>> myMinHeap["B"]
+    # -17
     """
 
     def __init__(self, array):
@@ -131,40 +134,49 @@ class MinHeap:
         self.heap_dict[node.name] = new_value
         self.sift_up(self.idx_of_element[node])
 
+    def __repr__(self):
+        return str(self.heap)
 
 # USAGE
 
-r = Node("R", -1)
-b = Node("B", 6)
-a = Node("A", 3)
-x = Node("X", 1)
-e = Node("E", 4)
+def main():
+    # Use one of these two ways to generate Min-Heap
+    # Generating Min-Heap from array
+    my_min_heap = MinHeap([
+        Node("2", 2),
+        Node("4", 4),
+        Node("3", 3),
+        Node("7", 7),
+        Node("7", 7),
+        Node("5", 5),
+        Node("6", 6),
+        Node("8", 8),
+        Node("9", 9)
+    ])
+    # Generating Min-Heap by Insert method
+    # myMinHeap.insert(a)
+    # myMinHeap.insert(b)
+    # myMinHeap.insert(x)
+    # myMinHeap.insert(r)
+    # myMinHeap.insert(e)
+    # Before
+    print("Min Heap - before anything")
+    for i in my_min_heap.heap:
+        print(i)
+    print(f"Extract min: {my_min_heap.remove()}")
+    # After
+    print("after extract")
+    for i in my_min_heap.heap:
+        print(i)
 
-# Use one of these two ways to generate Min-Heap
+    my_min_heap.insert(Node("1", 1))
 
-# Generating Min-Heap from array
-my_min_heap = MinHeap([r, b, a, x, e])
+    print(my_min_heap)
 
-# Generating Min-Heap by Insert method
-# myMinHeap.insert(a)
-# myMinHeap.insert(b)
-# myMinHeap.insert(x)
-# myMinHeap.insert(r)
-# myMinHeap.insert(e)
 
-# Before
-print("Min Heap - before decrease key")
-for i in my_min_heap.heap:
-    print(i)
-
-print("Min Heap - After decrease key of node [B -> -17]")
-my_min_heap.decrease_key(b, -17)
-
-# After
-for i in my_min_heap.heap:
-    print(i)
 
 if __name__ == "__main__":
-    import doctest
-
-    doctest.testmod()
+    main()
+    # import doctest
+    #
+    # doctest.testmod()

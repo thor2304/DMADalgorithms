@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-from .number_theory.prime_numbers import next_prime
+from number_theory.prime_numbers import next_prime
 
 
 class HashTable:
@@ -12,13 +12,17 @@ class HashTable:
         size_table: int,
         charge_factor: int | None = None,
         lim_charge: float | None = None,
+        values: list[float] | None = None
     ) -> None:
         self.size_table = size_table
-        self.values = [None] * self.size_table
+        self.values = [None] * self.size_table if values is None else values
         self.lim_charge = 0.75 if lim_charge is None else lim_charge
         self.charge_factor = 1 if charge_factor is None else charge_factor
         self.__aux_list: list = []
         self._keys: dict = {}
+
+    def __repr__(self):
+        return str(self.values)
 
     def keys(self):
         return self._keys

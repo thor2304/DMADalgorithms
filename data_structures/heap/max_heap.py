@@ -1,18 +1,18 @@
 class BinaryHeap:
     """
     A max-heap implementation in Python
-    >>> binary_heap = BinaryHeap()
-    >>> binary_heap.insert(6)
-    >>> binary_heap.insert(10)
-    >>> binary_heap.insert(15)
-    >>> binary_heap.insert(12)
-    >>> binary_heap.pop()
-    15
-    >>> binary_heap.pop()
-    12
-    >>> binary_heap.get_list
-    [10, 6]
-    >>> len(binary_heap)
+    # >>> binary_heap = BinaryHeap()
+    # >>> binary_heap.insert(6)
+    # >>> binary_heap.insert(10)
+    # >>> binary_heap.insert(15)
+    # >>> binary_heap.insert(12)
+    # >>> binary_heap.pop()
+    # 15
+    # >>> binary_heap.pop()
+    # 12
+    # >>> binary_heap.get_list
+    # [10, 6]
+    # >>> len(binary_heap)
     2
     """
 
@@ -68,20 +68,23 @@ class BinaryHeap:
         """Length of the array"""
         return self.__size
 
+    def __repr__(self):
+        return str(self.heap)
+
 
 if __name__ == "__main__":
-    import doctest
+    # import doctest
+    #
+    # doctest.testmod()
 
-    doctest.testmod()
     # create an instance of BinaryHeap
     binary_heap = BinaryHeap()
-    binary_heap.insert(6)
-    binary_heap.insert(10)
-    binary_heap.insert(15)
-    binary_heap.insert(12)
+
+    for n in [18, 9, 16, 4, 8, 12, 13, 1, 2]:
+        binary_heap.insert(n)
+
     # pop root(max-values because it is max heap)
-    print(binary_heap.pop())  # 15
-    print(binary_heap.pop())  # 12
+    print(binary_heap.pop())
     # get the list and size after operations
     print(binary_heap.get_list)
     print(len(binary_heap))

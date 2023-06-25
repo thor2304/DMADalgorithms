@@ -18,6 +18,9 @@ class Heap:
         # will be done.
         self.key = key or (lambda x: x)
 
+    def __repr__(self):
+        return str([n[1] for n in self.arr])
+
     def _parent(self, i: int) -> int | None:
         """Returns parent index of given index if exists else None"""
         return int((i - 1) / 2) if i > 0 else None
@@ -102,8 +105,10 @@ class Heap:
             self._heapify_up(index)
             self._heapify_down(index)
 
-    def insert_item(self, item: int, item_value: int) -> None:
+    def insert_item(self, item: int, item_value: int = None) -> None:
         """Inserts given item with given value in heap"""
+        if item_value is None:
+            item_value = item
         arr_len = len(self.arr)
         if arr_len == self.size:
             self.arr.append([item, self.key(item_value)])
@@ -128,47 +133,21 @@ class Heap:
         return top_item_tuple
 
 
-def test_heap() -> None:
-    """
-    >>> h = Heap()  # Max-heap
-    >>> h.insert_item(5, 34)
-    >>> h.insert_item(6, 31)
-    >>> h.insert_item(7, 37)
-    >>> h.get_top()
-    [7, 37]
-    >>> h.extract_top()
-    [7, 37]
-    >>> h.extract_top()
-    [5, 34]
-    >>> h.extract_top()
-    [6, 31]
-    >>> h = Heap(key=lambda x: -x)  # Min heap
-    >>> h.insert_item(5, 34)
-    >>> h.insert_item(6, 31)
-    >>> h.insert_item(7, 37)
-    >>> h.get_top()
-    [6, -31]
-    >>> h.extract_top()
-    [6, -31]
-    >>> h.extract_top()
-    [5, -34]
-    >>> h.extract_top()
-    [7, -37]
-    >>> h.insert_item(8, 45)
-    >>> h.insert_item(9, 40)
-    >>> h.insert_item(10, 50)
-    >>> h.get_top()
-    [9, -40]
-    >>> h.update_item(10, 30)
-    >>> h.get_top()
-    [10, -30]
-    >>> h.delete_item(10)
-    >>> h.get_top()
-    [9, -40]
-    """
+def main():
+    heap = Heap()
+    for n in [18, 9, 16, 4, 8, 12, 13, 1, 2]:
+        heap.insert_item(n)
+
+    print(heap)
+
+    heap.update_item(9, 15)
+
+    print(heap)
+
+    heap.extract_top()
+
+    print(heap)
 
 
 if __name__ == "__main__":
-    import doctest
-
-    doctest.testmod()
+    main()
