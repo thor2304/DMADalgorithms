@@ -3,7 +3,7 @@ fake_useragent
 keras
 lxml
 matplotlib
-numpy
+numpy~=1.24.3
 opencv-python
 pandas
 pillow
@@ -14,10 +14,12 @@ rich
 scikit-fuzzy
 scikit-learn
 statsmodels
-sympy
+sympy~=1.12
 tensorflow
 texttable
 tweepy
 xgboost
 yulewalker
 truth-table-generator
+mpmath~=1.3.0
+big-o-calculator~=0.0.9
