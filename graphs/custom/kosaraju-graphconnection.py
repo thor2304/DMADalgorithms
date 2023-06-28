@@ -22,6 +22,9 @@ class Graph:
             n2 = self.vertices.get(t[1])
             n1.connect_node(n2)
 
+    def __repr__(self):
+        return str(self.vertices)
+
     class Node:
         visited = False
         connections = []
@@ -46,6 +49,9 @@ class Graph:
             """
             return sorted(self.connections, key=lambda x: x.name, reverse=False)
 
+        def __repr__(self):
+            return f"{[x.name for x in self.get_connections()]}"
+
 
 class Kosaraju:
     vertices = None
@@ -64,6 +70,8 @@ class Kosaraju:
         self.find_components()
         self.print_result()
 
+    def __repr__(self):
+        return str(self.graph)
     def print_result(self):
         """
         Prints the result with the number of connections as well as the name
@@ -206,6 +214,7 @@ connections = [
 
 # Argument is the number of nodes
 graph = Kosaraju(9, connections)
+print(graph)
 graph.print_discovery_time()
 print()
 graph.print_finishing_time()

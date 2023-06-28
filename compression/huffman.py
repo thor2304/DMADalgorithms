@@ -50,7 +50,7 @@ def build_tree(letters: list[Letter]) -> Letter | TreeNode:
     Run through the list of Letters and build the min heap
     for the Huffman Tree.
     """
-    response: list[Letter | TreeNode] = letters  # type: ignore
+    response: list[Letter | TreeNode] = sorted(letters, key=lambda x: x.freq)  # type: ignore
     while len(response) > 1:
         left = response.pop(0)
         right = response.pop(0)
@@ -95,11 +95,13 @@ def huffman(file_path: str, char_list: dict[str, int] = None) -> tuple[Letter | 
     if char_list is not None:
         return root, letters
 
+
 def encode(letters: dict[Letter, str], string: str) -> str:
     out = ""
     for letter in string:
         out += letters[letter]
     return out
+
 
 def encoded_size(letters: dict[Letter, str], char_list: dict[str, int]) -> int:
     file_size = 0
