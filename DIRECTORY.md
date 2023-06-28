@@ -1,4 +1,11 @@
+# Very useful files
+- `TTG/Truth_tables`
+- `pseudo_code_big_o_time/pseudo_code_big_o_checker.py`
+- `master_theorem/master_theorem.py`
+- `graphs/EDGE_TYPES.py`
+- 
 
+# Huge repo
 ## Arithmetic Analysis
   * [Bisection](arithmetic_analysis/bisection.py)
   * [Gaussian Elimination](arithmetic_analysis/gaussian_elimination.py)
@@ -1099,19 +1106,15 @@
   * [Ternary Search](searches/ternary_search.py)
 
 ## Sorts
-  * [Bead Sort](sorts/bead_sort.py)
   * [Binary Insertion Sort](sorts/binary_insertion_sort.py)
   * [Bitonic Sort](sorts/bitonic_sort.py)
-  * [Bogo Sort](sorts/bogo_sort.py)
   * [Bubble Sort](sorts/bubble_sort.py)
   * [Bucket Sort](sorts/bucket_sort.py)
   * [Circle Sort](sorts/circle_sort.py)
-  * [Cocktail Shaker Sort](sorts/cocktail_shaker_sort.py)
   * [Comb Sort](sorts/comb_sort.py)
   * [Counting Sort](sorts/counting_sort.py)
   * [Cycle Sort](sorts/cycle_sort.py)
   * [Double Sort](sorts/double_sort.py)
-  * [Dutch National Flag Sort](sorts/dutch_national_flag_sort.py)
   * [Exchange Sort](sorts/exchange_sort.py)
   * [External Sort](sorts/external_sort.py)
   * [Gnome Sort](sorts/gnome_sort.py)
@@ -1123,11 +1126,6 @@
   * [Merge Sort](sorts/merge_sort.py)
   * [Msd Radix Sort](sorts/msd_radix_sort.py)
   * [Natural Sort](sorts/natural_sort.py)
-  * [Odd Even Sort](sorts/odd_even_sort.py)
-  * [Odd Even Transposition Parallel](sorts/odd_even_transposition_parallel.py)
-  * [Odd Even Transposition Single Threaded](sorts/odd_even_transposition_single_threaded.py)
-  * [Pancake Sort](sorts/pancake_sort.py)
-  * [Patience Sort](sorts/patience_sort.py)
   * [Pigeon Sort](sorts/pigeon_sort.py)
   * [Pigeonhole Sort](sorts/pigeonhole_sort.py)
   * [Quick Sort](sorts/quick_sort.py)
@@ -1142,14 +1140,12 @@
   * [Selection Sort](sorts/selection_sort.py)
   * [Shell Sort](sorts/shell_sort.py)
   * [Shrink Shell Sort](sorts/shrink_shell_sort.py)
-  * [Slowsort](sorts/slowsort.py)
   * [Stooge Sort](sorts/stooge_sort.py)
   * [Strand Sort](sorts/strand_sort.py)
   * [Tim Sort](sorts/tim_sort.py)
   * [Topological Sort](sorts/topological_sort.py)
   * [Tree Sort](sorts/tree_sort.py)
   * [Unknown Sort](sorts/unknown_sort.py)
-  * [Wiggle Sort](sorts/wiggle_sort.py)
 
 ## Strings
   * [Aho Corasick](strings/aho_corasick.py)
