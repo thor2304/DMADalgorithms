@@ -45,7 +45,7 @@ def format_poly_log(k, i):
         result += "log"
         if i != 1:
             result += f"^{i}"
-        result += " n"
+        result += "(n)"
 
     return result
 

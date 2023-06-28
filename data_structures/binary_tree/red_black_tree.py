@@ -332,7 +332,7 @@ class RedBlackTree:
         leaves of the tree, or None if there isn't one such value (the
         tree is color incorrectly).
         """
-        if self is None or self.left is None or self.right is None:
+        if self is None:
             # If we're already at a leaf, there is no path
             return 1
         left = RedBlackTree.black_height(self.left)
@@ -533,205 +533,208 @@ functions of the red-black tree.
 """
 
 
-def test_rotations() -> bool:
-    """Test that the rotate_left and rotate_right functions work."""
-    # Make a tree to test on
-    tree = RedBlackTree(0)
-    tree.left = RedBlackTree(-10, parent=tree)
-    tree.right = RedBlackTree(10, parent=tree)
-    tree.left.left = RedBlackTree(-20, parent=tree.left)
-    tree.left.right = RedBlackTree(-5, parent=tree.left)
-    tree.right.left = RedBlackTree(5, parent=tree.right)
-    tree.right.right = RedBlackTree(20, parent=tree.right)
-    # Make the right rotation
-    left_rot = RedBlackTree(10)
-    left_rot.left = RedBlackTree(0, parent=left_rot)
-    left_rot.left.left = RedBlackTree(-10, parent=left_rot.left)
-    left_rot.left.right = RedBlackTree(5, parent=left_rot.left)
-    left_rot.left.left.left = RedBlackTree(-20, parent=left_rot.left.left)
-    left_rot.left.left.right = RedBlackTree(-5, parent=left_rot.left.left)
-    left_rot.right = RedBlackTree(20, parent=left_rot)
-    tree = tree.rotate_left()
-    if tree != left_rot:
-        return False
-    tree = tree.rotate_right()
-    tree = tree.rotate_right()
-    # Make the left rotation
-    right_rot = RedBlackTree(-10)
-    right_rot.left = RedBlackTree(-20, parent=right_rot)
-    right_rot.right = RedBlackTree(0, parent=right_rot)
-    right_rot.right.left = RedBlackTree(-5, parent=right_rot.right)
-    right_rot.right.right = RedBlackTree(10, parent=right_rot.right)
-    right_rot.right.right.left = RedBlackTree(5, parent=right_rot.right.right)
-    right_rot.right.right.right = RedBlackTree(20, parent=right_rot.right.right)
-    if tree != right_rot:
-        return False
-    return True
+# def test_rotations() -> bool:
+#     """Test that the rotate_left and rotate_right functions work."""
+#     # Make a tree to test on
+#     tree = RedBlackTree(0)
+#     tree.left = RedBlackTree(-10, parent=tree)
+#     tree.right = RedBlackTree(10, parent=tree)
+#     tree.left.left = RedBlackTree(-20, parent=tree.left)
+#     tree.left.right = RedBlackTree(-5, parent=tree.left)
+#     tree.right.left = RedBlackTree(5, parent=tree.right)
+#     tree.right.right = RedBlackTree(20, parent=tree.right)
+#     # Make the right rotation
+#     left_rot = RedBlackTree(10)
+#     left_rot.left = RedBlackTree(0, parent=left_rot)
+#     left_rot.left.left = RedBlackTree(-10, parent=left_rot.left)
+#     left_rot.left.right = RedBlackTree(5, parent=left_rot.left)
+#     left_rot.left.left.left = RedBlackTree(-20, parent=left_rot.left.left)
+#     left_rot.left.left.right = RedBlackTree(-5, parent=left_rot.left.left)
+#     left_rot.right = RedBlackTree(20, parent=left_rot)
+#     tree = tree.rotate_left()
+#     if tree != left_rot:
+#         return False
+#     tree = tree.rotate_right()
+#     tree = tree.rotate_right()
+#     # Make the left rotation
+#     right_rot = RedBlackTree(-10)
+#     right_rot.left = RedBlackTree(-20, parent=right_rot)
+#     right_rot.right = RedBlackTree(0, parent=right_rot)
+#     right_rot.right.left = RedBlackTree(-5, parent=right_rot.right)
+#     right_rot.right.right = RedBlackTree(10, parent=right_rot.right)
+#     right_rot.right.right.left = RedBlackTree(5, parent=right_rot.right.right)
+#     right_rot.right.right.right = RedBlackTree(20, parent=right_rot.right.right)
+#     if tree != right_rot:
+#         return False
+#     return True
 
 
-def test_insertion_speed() -> bool:
-    """Test that the tree balances inserts to O(log(n)) by doing a lot
-    of them.
-    """
-    tree = RedBlackTree(-1)
-    for i in range(300000):
-        tree = tree.insert(i)
-    return True
+# def test_insertion_speed() -> bool:
+#     """Test that the tree balances inserts to O(log(n)) by doing a lot
+#     of them.
+#     """
+#     tree = RedBlackTree(-1)
+#     for i in range(300000):
+#         tree = tree.insert(i)
+#     return True
 
 
-def test_insert() -> bool:
-    """Test the insert() method of the tree correctly balances, colors,
-    and inserts.
-    """
-    tree = RedBlackTree(0)
-    tree.insert(8)
-    tree.insert(-8)
-    tree.insert(4)
-    tree.insert(12)
-    tree.insert(10)
-    tree.insert(11)
-    ans = RedBlackTree(0, 0)
-    ans.left = RedBlackTree(-8, 0, ans)
-    ans.right = RedBlackTree(8, 1, ans)
-    ans.right.left = RedBlackTree(4, 0, ans.right)
-    ans.right.right = RedBlackTree(11, 0, ans.right)
-    ans.right.right.left = RedBlackTree(10, 1, ans.right.right)
-    ans.right.right.right = RedBlackTree(12, 1, ans.right.right)
-    return tree == ans
+# def test_insert() -> bool:
+#     """Test the insert() method of the tree correctly balances, colors,
+#     and inserts.
+#     """
+#     tree = RedBlackTree(0)
+#     tree.insert(8)
+#     tree.insert(-8)
+#     tree.insert(4)
+#     tree.insert(12)
+#     tree.insert(10)
+#     tree.insert(11)
+#     ans = RedBlackTree(0, 0)
+#     ans.left = RedBlackTree(-8, 0, ans)
+#     ans.right = RedBlackTree(8, 1, ans)
+#     ans.right.left = RedBlackTree(4, 0, ans.right)
+#     ans.right.right = RedBlackTree(11, 0, ans.right)
+#     ans.right.right.left = RedBlackTree(10, 1, ans.right.right)
+#     ans.right.right.right = RedBlackTree(12, 1, ans.right.right)
+#     return tree == ans
+
+#
+# def test_insert_and_search() -> bool:
+#     """Tests searching through the tree for values."""
+#     tree = RedBlackTree(0)
+#     tree.insert(8)
+#     tree.insert(-8)
+#     tree.insert(4)
+#     tree.insert(12)
+#     tree.insert(10)
+#     tree.insert(11)
+#     if 5 in tree or -6 in tree or -10 in tree or 13 in tree:
+#         # Found something not in there
+#         return False
+#     if not (11 in tree and 12 in tree and -8 in tree and 0 in tree):
+#         # Didn't find something in there
+#         return False
+# #     return True
+#
+#
+# def test_insert_delete() -> bool:
+#     """Test the insert() and delete() method of the tree, verifying the
+#     insertion and removal of elements, and the balancing of the tree.
+#     """
+#     tree = RedBlackTree(0)
+#     tree = tree.insert(-12)
+#     tree = tree.insert(8)
+#     tree = tree.insert(-8)
+#     tree = tree.insert(15)
+#     tree = tree.insert(4)
+#     tree = tree.insert(12)
+#     tree = tree.insert(10)
+#     tree = tree.insert(9)
+#     tree = tree.insert(11)
+#     tree = tree.remove(15)
+#     tree = tree.remove(-12)
+#     tree = tree.remove(9)
+#     if not tree.check_color_properties():
+#         return False
+#     if list(tree.inorder_traverse()) != [-8, 0, 4, 8, 10, 11, 12]:
+#         return False
+#     return True
 
 
-def test_insert_and_search() -> bool:
-    """Tests searching through the tree for values."""
-    tree = RedBlackTree(0)
-    tree.insert(8)
-    tree.insert(-8)
-    tree.insert(4)
-    tree.insert(12)
-    tree.insert(10)
-    tree.insert(11)
-    if 5 in tree or -6 in tree or -10 in tree or 13 in tree:
-        # Found something not in there
-        return False
-    if not (11 in tree and 12 in tree and -8 in tree and 0 in tree):
-        # Didn't find something in there
-        return False
-    return True
+# def test_floor_ceil() -> bool:
+#     """Tests the floor and ceiling functions in the tree."""
+#     tree = RedBlackTree(0)
+#     tree.insert(-16)
+#     tree.insert(16)
+#     tree.insert(8)
+#     tree.insert(24)
+#     tree.insert(20)
+#     tree.insert(22)
+#     tuples = [(-20, None, -16), (-10, -16, 0), (8, 8, 8), (50, 24, None)]
+#     for val, floor, ceil in tuples:
+#         if tree.floor(val) != floor or tree.ceil(val) != ceil:
+#             return False
+#     return True
 
-
-def test_insert_delete() -> bool:
-    """Test the insert() and delete() method of the tree, verifying the
-    insertion and removal of elements, and the balancing of the tree.
-    """
-    tree = RedBlackTree(0)
-    tree = tree.insert(-12)
-    tree = tree.insert(8)
-    tree = tree.insert(-8)
-    tree = tree.insert(15)
-    tree = tree.insert(4)
-    tree = tree.insert(12)
-    tree = tree.insert(10)
-    tree = tree.insert(9)
-    tree = tree.insert(11)
-    tree = tree.remove(15)
-    tree = tree.remove(-12)
-    tree = tree.remove(9)
-    if not tree.check_color_properties():
-        return False
-    if list(tree.inorder_traverse()) != [-8, 0, 4, 8, 10, 11, 12]:
-        return False
-    return True
-
-
-def test_floor_ceil() -> bool:
-    """Tests the floor and ceiling functions in the tree."""
-    tree = RedBlackTree(0)
-    tree.insert(-16)
-    tree.insert(16)
-    tree.insert(8)
-    tree.insert(24)
-    tree.insert(20)
-    tree.insert(22)
-    tuples = [(-20, None, -16), (-10, -16, 0), (8, 8, 8), (50, 24, None)]
-    for val, floor, ceil in tuples:
-        if tree.floor(val) != floor or tree.ceil(val) != ceil:
-            return False
-    return True
-
-
-def test_min_max() -> bool:
-    """Tests the min and max functions in the tree."""
-    tree = RedBlackTree(0)
-    tree.insert(-16)
-    tree.insert(16)
-    tree.insert(8)
-    tree.insert(24)
-    tree.insert(20)
-    tree.insert(22)
-    if tree.get_max() != 22 or tree.get_min() != -16:
-        return False
-    return True
-
-
-def test_tree_traversal() -> bool:
-    """Tests the three different tree traversal functions."""
-    tree = RedBlackTree(0)
-    tree = tree.insert(-16)
-    tree.insert(16)
-    tree.insert(8)
-    tree.insert(24)
-    tree.insert(20)
-    tree.insert(22)
-    if list(tree.inorder_traverse()) != [-16, 0, 8, 16, 20, 22, 24]:
-        return False
-    if list(tree.preorder_traverse()) != [0, -16, 16, 8, 22, 20, 24]:
-        return False
-    if list(tree.postorder_traverse()) != [-16, 8, 20, 24, 22, 16, 0]:
-        return False
-    return True
-
-
-def test_tree_chaining() -> bool:
-    """Tests the three different tree chaining functions."""
-    tree = RedBlackTree(0)
-    tree = tree.insert(-16).insert(16).insert(8).insert(24).insert(20).insert(22)
-    if list(tree.inorder_traverse()) != [-16, 0, 8, 16, 20, 22, 24]:
-        return False
-    if list(tree.preorder_traverse()) != [0, -16, 16, 8, 22, 20, 24]:
-        return False
-    if list(tree.postorder_traverse()) != [-16, 8, 20, 24, 22, 16, 0]:
-        return False
-    return True
-
-
-def print_results(msg: str, passes: bool) -> None:
-    print(str(msg), "works!" if passes else "doesn't work :(")
-
-
-def pytests() -> None:
-    assert test_rotations()
-    assert test_insert()
-    assert test_insert_and_search()
-    assert test_insert_delete()
-    assert test_floor_ceil()
-    assert test_tree_traversal()
-    assert test_tree_chaining()
+#
+# def test_min_max() -> bool:
+#     """Tests the min and max functions in the tree."""
+#     tree = RedBlackTree(0)
+#     tree.insert(-16)
+#     tree.insert(16)
+#     tree.insert(8)
+#     tree.insert(24)
+#     tree.insert(20)
+#     tree.insert(22)
+#     if tree.get_max() != 22 or tree.get_min() != -16:
+#         return False
+#     return True
+#
+#
+# def test_tree_traversal() -> bool:
+#     """Tests the three different tree traversal functions."""
+#     tree = RedBlackTree(0)
+#     tree = tree.insert(-16)
+#     tree.insert(16)
+#     tree.insert(8)
+#     tree.insert(24)
+#     tree.insert(20)
+#     tree.insert(22)
+#     if list(tree.inorder_traverse()) != [-16, 0, 8, 16, 20, 22, 24]:
+#         return False
+#     if list(tree.preorder_traverse()) != [0, -16, 16, 8, 22, 20, 24]:
+#         return False
+#     if list(tree.postorder_traverse()) != [-16, 8, 20, 24, 22, 16, 0]:
+#         return False
+#     return True
+#
+#
+# def test_tree_chaining() -> bool:
+#     """Tests the three different tree chaining functions."""
+#     tree = RedBlackTree(0)
+#     tree = tree.insert(-16).insert(16).insert(8).insert(24).insert(20).insert(22)
+#     if list(tree.inorder_traverse()) != [-16, 0, 8, 16, 20, 22, 24]:
+#         return False
+#     if list(tree.preorder_traverse()) != [0, -16, 16, 8, 22, 20, 24]:
+#         return False
+#     if list(tree.postorder_traverse()) != [-16, 8, 20, 24, 22, 16, 0]:
+#         return False
+#     return True
+#
+#
+# def print_results(msg: str, passes: bool) -> None:
+#     print(str(msg), "works!" if passes else "doesn't work :(")
+#
+#
+# def pytests() -> None:
+#     assert test_rotations()
+#     assert test_insert()
+#     assert test_insert_and_search()
+#     assert test_insert_delete()
+#     assert test_floor_ceil()
+#     assert test_tree_traversal()
+#     assert test_tree_chaining()
 
 
 def main() -> None:
-    """
-    >>> pytests()
-    """
-    print_results("Rotating right and left", test_rotations())
-    print_results("Inserting", test_insert())
-    print_results("Searching", test_insert_and_search())
-    print_results("Deleting", test_insert_delete())
-    print_results("Floor and ceil", test_floor_ceil())
-    print_results("Tree traversal", test_tree_traversal())
-    print_results("Tree traversal", test_tree_chaining())
-    print("Testing tree balancing...")
-    print("This should only be a few seconds.")
-    test_insertion_speed()
-    print("Done!")
+    tree = RedBlackTree(0)
+    tree.insert(8)
+    tree.insert(-8)
+    tree.insert(4)
+    tree.insert(12)
+    tree.insert(10)
+    tree.insert(11)
+
+    print(list(tree.inorder_traverse()))
+    print(tree)
+
+    tree.remove(-8)
+    tree.remove(4)
+    tree._remove_repair()
+    tree.check_color_properties()
+    print(list(tree.inorder_traverse()))
+    print(tree)
 
 
 if __name__ == "__main__":

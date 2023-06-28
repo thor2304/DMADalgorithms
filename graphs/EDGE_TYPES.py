@@ -37,9 +37,10 @@ class Vertex:
         return self.__str__()
 
 
-def add_neighbours(dict_in: dict[Vertex, list[Vertex]]) -> None:
+def add_neighbours(dict_in: dict[Vertex, list[Vertex]], sort_alphabetically: bool = True) -> None:
     for vertex, neighbours in dict_in.items():
-        for neighbour in neighbours:
+        sorted_neighbours = sorted(neighbours, key=lambda x: x.id) if sort_alphabetically else neighbours
+        for neighbour in sorted_neighbours:
             vertex.addNeighbor(neighbour)
 
 
@@ -92,6 +93,7 @@ def edge_check(G: list[Vertex]) -> None:
             else:
                 print(f"Error on edge: ('{u.id}',  '{v}')")
 
+
 def get_vertex_by_time_order(G: list[Vertex]) -> list[Vertex]:
     global time
 
@@ -116,7 +118,7 @@ def main():
     i = Vertex('i')
 
     add_neighbours({
-        a: [b, d],
+        a: [d, b],
         b: [c, d],
         c: [e],
         d: [e],
@@ -125,7 +127,7 @@ def main():
         g: [d, h],
         h: [e, i],
         i: [],
-    })
+    }, sort_alphabetically=True)
 
     Vertexs = [a, b, c, d, e, f, g, h, i]
 

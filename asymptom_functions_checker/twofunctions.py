@@ -27,6 +27,6 @@ if __name__ == "__main__":
         print(f"o, O")
     else:
         print("Both functions grow at the same rate")
-        print(f"Phi, O, Omega")
+        print(f"Theta, O, Omega")
 
     print(f"Limited expression: {limit_expr}")

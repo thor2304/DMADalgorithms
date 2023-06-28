@@ -82,14 +82,24 @@ exists_not_for_all = exists(range(1, 11), lambda u: not for_all(range(1, 11), la
 # print("Der eksisterer ikke et x for alle y, hvor x^2 = u:", exists_not_for_all)
 print("Der eksisterer et u hvor hvor der findes et x^2 = u for alle y:", exists_not_for_all)
 ## Note the here the y makes no sense, it has no effect on the outcome of the existance check
+print()
 
+# Der eksisterer ikke et a for hvilket det gælder for alle b at a^2 = b
+print(f"Der eksisterer ikke et a for hvilket det gælder for alle b at a^2 = b: "
+      f"{not exists(range(-80, 80), lambda a: for_all(range(-80**2, 81**2), lambda b: a**2 == b))}")
+
+# Der eksisterer et a for hvilket det gælder for alle b at a^2 != b
+print(f"Der eksisterer et a for hvilket det gælder for alle b at a^2 != b: "
+      f"{exists(range(-80, 80), lambda a: for_all(range(-80**2, 81**2), lambda b: a**2 != b))}")
+
+print()
 
 #### nye ###
 not_exists_for_all2 = not exists(range(-80, 80), lambda b: for_all(range(-80, 80), lambda a: a**2 == b))
-print("Der eksisterer ikke et a for alle b, hvor a^2 = b:", not_exists_for_all2)
+# print("Der eksisterer ikke et a for alle b, hvor a^2 = b:", not_exists_for_all2)
 
 # Eksempel: Der eksisterer et a for alle b, hvor a^2 != b
 # Genererer værdier for b fra -80 til 80 ved hjælp af range-funktionen.
 # Evaluerer, om der eksisterer et a for alle b, hvor a^2 != b, ved at negere kvantorerklæringen "for alle b, eksisterer et a, så a^2 != b".
 exists_for_all2 = exists(range(-80, 80), lambda b: not for_all(range(-80, 80), lambda a: a**2 != b))
-print("Der eksisterer et a for alle b, hvor a^2 != b:", exists_for_all2)
+# print("Der eksisterer et a for alle b, hvor a^2 != b:", exists_for_all2)
