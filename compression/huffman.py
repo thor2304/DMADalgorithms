@@ -101,22 +101,30 @@ def encode(letters: dict[Letter, str], string: str) -> str:
         out += letters[letter]
     return out
 
+def encoded_size(letters: dict[Letter, str], char_list: dict[str, int]) -> int:
+    file_size = 0
+    for char, frequency in char_list.items():
+        file_size += frequency * len(letters[char])
 
+    return file_size
 
 
 if __name__ == "__main__":
     # pass the file path to the huffman function
-    tree, letters = huffman("", {
-        "a": 500,
-        "b": 400,
-        "c": 300,
-        "d": 250,
-        "e": 200,
-        "f": 150,
-    })
+    char_list = {
+        "a": 200,
+        "b": 250,
+        "c": 100,
+        "d": 350,
+        "e": 400,
+        # "f": 150,
+    }
+    tree, letters = huffman("", char_list)
 
     print(tree)
     print(letters)
 
-    encoded = encode(letters, "caffebad")
-    print(f"encoded length={len(encoded)} result= {encoded}")
+    print(encoded_size(letters, char_list))
+
+    # encoded = encode(letters, "caffebad")
+    # print(f"encoded length={len(encoded)} result= {encoded}")

@@ -51,7 +51,7 @@ class BinaryHeap:
                 self.__heap[bigger_child] = temporary
             i = bigger_child
 
-    #the same as extract max
+    # the same as extract max
     def pop(self) -> int:
         """Pop the root element"""
         max_value = self.__heap[1]
@@ -81,7 +81,7 @@ if __name__ == "__main__":
     # create an instance of BinaryHeap
     binary_heap = BinaryHeap()
 
-    for n in [5, 4, 3, 3, 4, 2, 3, 2, 1]:
+    for n in [6, 12, 13, 4, 8, 14, 5]:
         binary_heap.insert(n)
 
     print(binary_heap.get_list)

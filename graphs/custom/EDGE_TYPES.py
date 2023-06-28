@@ -118,15 +118,15 @@ def main():
     i = Vertex('i')
 
     add_neighbours({
-        a: [d, b],
-        b: [c, d],
-        c: [e],
-        d: [e],
-        e: [b, f, g],
-        f: [c, h, i],
-        g: [d, h],
-        h: [e, i],
-        i: [],
+        a: [d, g],
+        b: [c],
+        c: [b, f],
+        d: [e, g],
+        e: [a, d],
+        f: [g, b],
+        g: [h, i, b],
+        h: [g, d, f],
+        i: [a, b],
     }, sort_alphabetically=True)
 
     Vertexs = [a, b, c, d, e, f, g, h, i]

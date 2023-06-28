@@ -18,8 +18,8 @@ def partition(arr, low, high, one_indexed=False):
 
 
 def main():
-    A = [6, 2, 4, 5, 1, 7, 3]
-    partition(A, 1, 7, one_indexed=True)
+    A = [21, 17, 28, 14, 9, 18, 6, 1, 26, 15, 30, 7, 13, 19, 2]
+    partition(A, 4, 13, one_indexed=True)
 
     print(A)
 
