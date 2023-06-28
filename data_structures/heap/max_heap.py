@@ -81,9 +81,10 @@ if __name__ == "__main__":
     # create an instance of BinaryHeap
     binary_heap = BinaryHeap()
 
-    for n in [18, 9, 16, 4, 8, 12, 13, 1, 2]:
+    for n in [5, 4, 3, 3, 4, 2, 3, 2, 1]:
         binary_heap.insert(n)
 
+    print(binary_heap.get_list)
     # pop root(max-values because it is max heap)
     print(binary_heap.pop())
     # get the list and size after operations
