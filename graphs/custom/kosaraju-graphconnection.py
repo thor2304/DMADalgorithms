@@ -186,34 +186,33 @@ class Kosaraju:
 
 connections = [
     ("a", "e"),
-    ("a", "d"),
-    ("a", "g"),
 
+    ("b", "a"),
     ("b", "c"),
 
-    ("c", "b"),
+    ("c", "d"),
+    ("c", "f"),
 
-    ("d", "e"),
+    ("d", "f"),
 
-    ("f", "c"),
-    ("f", "b"),
-    ("f", "g"),
+    ("e", "b"),
+    ("e", "h"),
 
-    ("g", "b"),
-    ("g", "d"),
-    ("g", "i"),
-    ("g", "h"),
+    ("f", "i"),
 
-    ("h", "d"),
+    ("g", "e"),
+
     ("h", "g"),
-    ("h", "f"),
+    ("h", "i"),
+    ("h", "c"),
 
-    ("i", "a"),
-    ("i", "b"),
+    ("i", "j"),
+
+    ("j", "f"),
 ]
 
 # Argument is the number of nodes
-graph = Kosaraju(9, connections)
+graph = Kosaraju(10, connections)
 print(graph)
 graph.print_discovery_time()
 print()

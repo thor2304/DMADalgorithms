@@ -3,8 +3,8 @@
 
 
 class Node:
-    def __init__(self, name, val):
-        self.name = name
+    def __init__(self, val, name=None):
+        self.name = name if name is not None else str(val)
         self.val = val
 
     def __str__(self):
@@ -143,16 +143,27 @@ def main():
     # Use one of these two ways to generate Min-Heap
     # Generating Min-Heap from array
     my_min_heap = MinHeap([
-        Node("2", 2),
-        Node("4", 4),
-        Node("3", 3),
-        Node("7", 7),
-        Node("7", 7),
-        Node("5", 5),
-        Node("6", 6),
-        Node("8", 8),
-        Node("9", 9)
+        Node(3),
+        Node(5),
+        Node(6),
+        Node(10),
+        Node(11),
+        Node(8),
+        Node(7),
+        Node(18),
+        Node(16),
+        Node(15),
     ])
+
+    my_min_heap = MinHeap([
+        Node(1),
+        Node(2),
+        Node(3),
+        Node(5),
+        Node(4),
+    ])
+
+
     # Generating Min-Heap by Insert method
     # myMinHeap.insert(a)
     # myMinHeap.insert(b)
@@ -163,13 +174,13 @@ def main():
     print("Min Heap - before anything")
     for i in my_min_heap.heap:
         print(i)
-    print(f"Extract min: {my_min_heap.remove()}")
+    print(f"\nExtract min: {my_min_heap.remove()}")
     # After
-    print("after extract")
+    print("\nafter extract:")
     for i in my_min_heap.heap:
         print(i)
 
-    my_min_heap.insert(Node("1", 1))
+    # my_min_heap.insert(Node(3))
 
     print(my_min_heap)
 

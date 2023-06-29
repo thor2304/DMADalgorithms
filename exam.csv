@@ -1,0 +1,110 @@
+Spørgsmål; korrekt svar; Fik jeg den rigtig?; mulige point
+Spørgsmål 1;     svar 3;ja;2
+Spørgsmål 2;     svar 2;ja;2
+Spørgsmål 3;     svar 3;ja;2
+Spørgsmål 4;     svar 1;ja;2
+;
+Spørgsmål 5.1;   svar 2;ja
+Spørgsmål 5.2;   svar 1;ja
+Spørgsmål 5.3;   svar 1;ja
+Spørgsmål 5.4;   svar 1;ja
+Spørgsmål 5.5;   svar 2;ja
+Spørgsmål 5.6;   svar 1;ja
+Spørgsmål 5.7;   svar 2;ja
+;;;5
+Spørgsmål 6.1;   svar 1;ja
+Spørgsmål 6.2;   svar 1;ja
+Spørgsmål 6.3;   svar 1;ja
+Spørgsmål 6.4;   svar 2;ja
+Spørgsmål 6.5;   svar 1;ja
+Spørgsmål 6.6;   svar 2;ja
+Spørgsmål 6.7;   svar 1;ja
+;;;5
+Spørgsmål 7;     svar 4;ja;3
+Spørgsmål 8;     svar 3 eller 4 eller 5 (alle OK som svar).;ja;3
+;
+Spørgsmål 9.1;   svar 2;ja
+Spørgsmål 9.2;   svar 2;ja
+Spørgsmål 9.3;   svar 1;ja
+Spørgsmål 9.4;   svar 2;ja
+Spørgsmål 9.5;   svar 1;ja
+Spørgsmål 9.6;   svar 1;ja
+;;;2
+Spørgsmål 10.1;  svar 1;ja
+Spørgsmål 10.2;  svar 1;ja
+Spørgsmål 10.3;  svar 2;ja
+Spørgsmål 10.4;  svar 2;ja
+Spørgsmål 10.5;  svar 1;ja
+Spørgsmål 10.6;  svar 2;ja
+Spørgsmål 10.7;  svar 2;ja
+;;;3
+Spørgsmål 11;    svar 5;ja;6
+Spørgsmål 12;    svar 4;ja;4
+Spørgsmål 13;    svar 3;ja;3
+Spørgsmål 14;    svar 2;ja;6
+Spørgsmål 15;    svar 2;ja;5
+Spørgsmål 16;    svar 4;ja;2
+;
+Spørgsmål 17.1;  svar 2;ja
+Spørgsmål 17.2;  svar 2;ja
+Spørgsmål 17.3;  svar 1;ja
+Spørgsmål 17.4;  svar 1;ja
+Spørgsmål 17.5;  svar 1;ja
+;;;4
+Spørgsmål 18;    svar 4;ja;4
+;
+Spørgsmål 19.1;  svar 2;ja
+Spørgsmål 19.2;  svar 1;ja
+Spørgsmål 19.3;  svar 1;ja
+Spørgsmål 19.4;  svar 2;ja
+Spørgsmål 19.5;  svar 2;ja
+Spørgsmål 19.6;  svar 2;ja
+Spørgsmål 19.7;  svar 1;ja
+;;;4
+Spørgsmål 20;    svar 1;ja;6
+;
+Spørgsmål 21.1;  svar 2;ja
+Spørgsmål 21.2;  svar 2;ja
+Spørgsmål 21.3;  svar 1;ja
+Spørgsmål 21.4;  svar 1;ja
+Spørgsmål 21.5;  svar 2;ja
+;;;3
+Spørgsmål 22;    svar 3;ja;4
+Spørgsmål 23;    svar 1;x;0 (2)
+Spørgsmål 24;    svar 3;ja;2
+Spørgsmål 25;    svar 4;ja;2
+Spørgsmål 26;    svar 1;ja;2
+Spørgsmål 27;    svar 4;ja;2
+Spørgsmål 28 (på side 27);    svar 1;ja;2
+Spørgsmål 29;    svar 3;ja;2
+Spørgsmål 30;    svar 2;ja;2
+Spørgsmål 31;    svar 3;ja;2
+Spørgsmål 32;    svar 1;ja;2
+;
+Spørgsmål 33.1;  svar 1;x;-1
+Spørgsmål 33.2;  svar 2;ja;1
+Spørgsmål 33.3;  svar 1;ja;1
+Spørgsmål 33.4;  svar 1;ja;1
+Spørgsmål 33.5;  svar 1;ja;1
+;;5
+Spørgsmål 34.1;  svar 2;ja
+Spørgsmål 34.2;  svar 2;ja
+Spørgsmål 34.3;  svar 1;ja
+Spørgsmål 34.4;  svar 1;ja
+Spørgsmål 34.5;  svar 1;ja
+Spørgsmål 34.6;  svar 2;ja
+Spørgsmål 34.7;  svar 2;ja
+;;;6
+Spørgsmål 35.1;  svar 1;x;-1.25
+Spørgsmål 35.2;  svar 1;x;-1.25
+Spørgsmål 35.3;  svar 1;ja;1.25
+Spørgsmål 35.4;  svar 2;ja;1.25
+;;5
+Spørgsmål 36.1;  svar 1;ja
+Spørgsmål 36.2;  svar 2;ja
+Spørgsmål 36.3;  svar 1;ja
+Spørgsmål 36.4;  svar 2;ja
+Spørgsmål 36.5;  svar 2;ja
+Spørgsmål 36.6;  svar 2;ja
+;;;6
+Spørgsmål 37;    svar 4;ja;3

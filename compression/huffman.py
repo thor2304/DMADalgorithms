@@ -114,12 +114,14 @@ def encoded_size(letters: dict[Letter, str], char_list: dict[str, int]) -> int:
 if __name__ == "__main__":
     # pass the file path to the huffman function
     char_list = {
-        "a": 200,
-        "b": 250,
-        "c": 100,
-        "d": 350,
-        "e": 400,
-        # "f": 150,
+        # "a": 200,
+        "b": 90,
+        "c": 15,
+        "d": 40,
+        # "e": 400,
+        "f": 30,
+        "g": 125,
+        "h": 35,
     }
     tree, letters = huffman("", char_list)
 
