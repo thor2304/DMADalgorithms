@@ -1,5 +1,6 @@
 from collections import defaultdict
 
+allpaths = []
 
 # class to represent a graph object
 class Graph:
@@ -46,6 +47,10 @@ def findAllTopologicalOrders(graph, path, discovered, N):
     # print the topological order if all vertices are included in the path
     if len(path) == N:
         print(path)
+        global allpaths
+        allpaths.append(path)
+
+    return allpaths
 
 
 # Print all topological orderings of a given DAG
@@ -57,24 +62,34 @@ def printAllTopologicalOrders(graph):
     # list to store the topological order
     path = []
     # find all topological ordering and print them
-    findAllTopologicalOrders(graph, path, discovered, N)
+    return findAllTopologicalOrders(graph, path, discovered, N)
 
 
 # Driver code
 if __name__ == '__main__':
     # List of graph edges as per above diagram
     edges = [
-        ('b', 'a'),
+        ('a', 'b'),
+        ('a', 'd'),
+
         ('b', 'd'),
-        ('d', 'a'),
-        ('b', 'c'),
-        ('d', 'e'),
         ('b', 'e'),
-        ('c', 'e'),
-        ('f', 'c'),
-        ('f', 'e')
+        ('b', 'c'),
+
+        ('c', 'f'),
+
+        # None for d
+
+        ('e', 'd'),
+        ('e', 'f'),
+
+    #     None for f
+
+        ('g', 'c'),
+        ('g', 'f'),
+
     ]
-    vertices = ['a', 'b', 'c', 'd', 'e', 'f']
+    vertices = ['a', 'b', 'c', 'd', 'e', 'f', 'g']
     print("All Topological sorts")
     # create a graph from edges
     graph = Graph(vertices)
@@ -82,4 +97,7 @@ if __name__ == '__main__':
     for edge in edges:
         graph.addEdge(edge[0], edge[1])
     # print all topological orderings of the graph
-    printAllTopologicalOrders(graph)
+    paths = printAllTopologicalOrders(graph)
+
+    print(f"{['a', 'b', 'e', 'd', 'g', 'c', 'f'] in paths}")
+    print(f"{paths}")

@@ -26,7 +26,10 @@ class Vertex:
         self.connectedTo[nbr.id] = nbr
 
     def __str__(self):
-        return str(self.id)
+        return str(f"({self.id} v.d = {self.d})")
+
+    def __repr__(self):
+        return self.__str__()
 
 
 def add_neighbours(dict):
@@ -98,15 +101,15 @@ def main():
     j = Vertex('j')
 
     add_neighbours({
-        a: [g],
-        b: [c, h],
-        c: [a, h],
-        d: [h, i, j],
-        e: [b, d, f, h],
-        f: [b, e],
-        g: [c, j],
-        h: [d, e, g, j],
-        i: [d, h, i],
+        a: [e],
+        b: [c],
+        c: [f, h],
+        d: [a, i, j],
+        e: [b, d, g],
+        f: [g],
+        g: [c],
+        h: [b],
+        i: [j],
     })
 
     Vertexs = [a, b, c, d, e, f, g, h, i, j]
@@ -114,6 +117,7 @@ def main():
     BFS(Vertexs, a)
 
     print("Vertex Added order: ", vertexAddedStr)
+    print(vertexAdded)
 
 
 if (__name__ == "__main__"):

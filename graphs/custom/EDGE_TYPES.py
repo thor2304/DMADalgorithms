@@ -95,16 +95,10 @@ def edge_check(G: list[Vertex]) -> None:
 
 
 def get_vertex_by_time_order(G: list[Vertex]) -> list[Vertex]:
-    global time
+    return sorted(G, key=lambda x: x.d)
 
-    vertexs = []
-
-    for i in range(time):
-        for u in G:
-            if (u.d == i):
-                vertexs.append(u)
-    return vertexs
-
+def get_vertex_by_finish(G: list[Vertex]) -> list[Vertex]:
+    return sorted(G, key=lambda x: x.f)
 
 def main():
     a = Vertex('a')
@@ -118,18 +112,18 @@ def main():
     i = Vertex('i')
 
     add_neighbours({
-        a: [d, g],
-        b: [c],
-        c: [b, f],
-        d: [e, g],
-        e: [a, d],
-        f: [g, b],
-        g: [h, i, b],
-        h: [g, d, f],
-        i: [a, b],
+        a: [b, e],
+        b: [c, f],
+        c: [d, g, f],
+        d: [h],
+        e: [],
+        f: [a, e, g],
+        g: [d],
+        h: [g],
+        # i: [a, b],
     }, sort_alphabetically=True)
 
-    Vertexs = [a, b, c, d, e, f, g, h, i]
+    Vertexs = [a, b, c, d, e, f, g, h]
 
     # s = Vertex('s')
     # z = Vertex('z')
@@ -157,7 +151,12 @@ def main():
     print("Forward Edges (" + str(len(forwardEdges)) + "): ", forwardEdges)
     print("Cross Edges (" + str(len(crossEdges)) + "): ", crossEdges)
 
+    print("\nd times:")
     for u in get_vertex_by_time_order(Vertexs):
+        print(u.id, u.d, u.f)
+
+    print("\nf times:")
+    for u in get_vertex_by_finish(Vertexs):
         print(u.id, u.d, u.f)
 
 

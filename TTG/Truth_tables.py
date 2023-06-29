@@ -13,7 +13,9 @@ from ttg import ttg
 if __name__ == '__main__':
     # print(ttg.Truths(['p', 'q'], ['p and q', 'p or q', '(p or (~q)) => (~p)']))
 
-    table_val = ttg.Truths(['p', 'q'], ['p and ~q', 'p or -q'])
-    table_val = ttg.Truths(['p', 'q'], ['~p or ~q', '~(p and q)'])
+    table_val = ttg.Truths(['p', 'q'], ['(p and q) or (p and ~q)' ])
+    # table_val = ttg.Truths(['p', 'q'], ['-(p!=~q)', 'p and ~q'])
+    # table_val = ttg.Truths(['p', 'q'], ['p => (p or q)'])
+    # table_val = ttg.Truths(['p', 'q'], ['~p or ~q', '~(p and q)'])
     print(table_val)
-    # print(table_val.valuation(4))
+    print(table_val.valuation(3))

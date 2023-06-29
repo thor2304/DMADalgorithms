@@ -718,24 +718,30 @@ functions of the red-black tree.
 
 
 def main() -> None:
-    tree = RedBlackTree(24)
-    tree.insert(18)
-    tree.insert(26)
-    tree.insert(5)
-    tree.insert(20)
-    tree.insert(27)
-    tree.insert(2)
+    tree = RedBlackTree(18)
+    tree.insert(9)
+    tree.insert(21)
     tree.insert(7)
-    tree.insert(23)
+    tree.insert(15)
+    tree.insert(24)
+    tree.insert(4)
+    tree.insert(11)
+    tree.insert(16)
 
     print(list(tree.inorder_traverse()))
     print(tree)
 
-    tree.insert(21)
+    tree.insert(25)
 
     tree.check_color_properties()
     print(list(tree.inorder_traverse()))
     print(tree)
+
+    while True:
+        node = input("What node?:")
+        node = tree.search(int(node))
+        print(f"{node.label} {'red' if color(node) else 'black'}: l= {'None' if node.left is None else node.left.label } | r = {'None' if node.right is None else node.right.label }")
+
 
 
 if __name__ == "__main__":
